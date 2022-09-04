@@ -1,0 +1,45 @@
+<div class="content-body">
+  <div class="content-login" *ngIf="formLogin">
+    <h2>Login</h2>
+    <form [formGroup]="formLogin">
+      <div class="block-input">
+        <input
+          formControlName="email"
+          nz-input
+          placeholder="EMAIL"
+          nzSize="large"
+        />
+        <div>
+          {{
+            formLogin.get("email")?.errors
+              ? "Por favor ingresa un correo válido"
+              : ""
+          }}
+        </div>
+      </div>
+
+      <div class="block-input">
+        <input
+          nz-input
+          formControlName="password"
+          type="password"
+          placeholder="PASSWORD"
+          nzSize="large"
+        />
+      </div>
+      <div class="block-input">
+        <button
+          nz-button
+          [disabled]="formLogin.invalid"
+          nzType="primary"
+          nzSize="large"
+          nzShape="round"
+          (click)="login()"
+        >
+          <span nz-icon nzType="login" nzTheme="outline"></span>
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

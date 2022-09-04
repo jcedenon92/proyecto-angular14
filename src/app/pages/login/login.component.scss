@@ -1,0 +1,28 @@
+.content-body{
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-image: url(/assets/images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .content-login{
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    h2{
+      text-align: center;
+    }
+    form{
+      .block-input{
+        margin-top: 20px;
+        button{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
