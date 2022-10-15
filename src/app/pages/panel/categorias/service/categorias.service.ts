@@ -9,17 +9,24 @@ import { ICategorias } from '../interfaces/categorias';
   providedIn: 'root', //lo importa desde la raiz del module
 })
 export class CategoriasService {
-  constructor(private http: HttpClient) {}
+  private header: HttpHeaders;
+  constructor(private http: HttpClient) {
+    this.header = new HttpHeaders({
+      token: this.getToken,
+    });
+  }
 
   get getToken(): string {
     return localStorage.getItem('token') || '';
   }
 
   listar(): Observable<ICategorias[]> {
-    const HEADER = new HttpHeaders({
-      token: this.getToken,
-    });
     const uri = `${environment.baseUrlRestaurantAdmin}/categories`;
-    return this.http.get<ICategorias[]>(uri, { headers: HEADER });
+    return this.http.get<ICategorias[]>(uri, { headers: this.header });
+  }
+
+  eliminar(id: string) {
+    const uri = `${environment.baseUrlRestaurantAdmin}/categories/${id}`;
+    return this.http.delete<any>(uri, { headers: this.header });
   }
 }

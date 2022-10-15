@@ -13,9 +13,9 @@
       <td>{{ data.description }}</td>
       <td>{{ data.active }}</td>
       <td>
-        <a>Action 一 {{ data.name }}</a>
+        <a>Editar</a>
         <nz-divider nzType="vertical"></nz-divider>
-        <a>Delete</a>
+        <a (click)="eliminarCategoria(data._id)">Eliminar</a>
       </td>
     </tr>
   </tbody>
