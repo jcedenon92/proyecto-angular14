@@ -17,8 +17,22 @@
           }}
         </div>
       </div>
-
+      <!--[(ngModel)]="password" -->
       <div class="block-input">
+        <!-- <nz-input-group [nzSuffix]="suffixTemplate">
+          <input
+            [type]="passwordVisible ? 'text' : 'password'"
+            nz-input
+            placeholder="input password"
+          />
+          <ng-template #suffixTemplate>
+            <span
+              nz-icon
+              [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible = !passwordVisible"
+            ></span>
+          </ng-template>
+        </nz-input-group> -->
         <input
           nz-input
           formControlName="password"

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrlRestaurantAdmin: 'http://restaurant-administrador-am.herokuapp.com',
 };

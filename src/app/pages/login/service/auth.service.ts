@@ -3,16 +3,14 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
-
     const HEADER = new HttpHeaders({
-      Authorization: 'Basic Y2hlZkBnbWFpbC5jb206bWFzdGVyY2hlZg=='
+      Authorization: `Basic ${btoa(`${email}:${password}`)}`,
     });
 
     const uri = `${environment.baseUrlRestaurantAdmin}/auth`;

@@ -26,9 +26,7 @@ registerLocaleData(es);
     BrowserAnimationsModule,
     LoginModule
   ],
-  providers: [
-    { provide: NZ_I18N, useValue: es_ES }
-  ],
+  providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

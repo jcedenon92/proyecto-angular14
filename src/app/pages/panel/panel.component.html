@@ -1,0 +1,48 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-submenu nzTitle="Categorias" nzIcon="user">
+        <ul>
+          <li nz-menu-item routerLink="/home/categorias">Listar</li>
+          <li nz-menu-item routerLink="/home/categorias/nuevo">Nuevo</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Platos" nzIcon="user">
+        <ul>
+          <li nz-menu-item routerLink="/home/platos">Listar</li>
+          <li nz-menu-item routerLink="/home/platos/nuevo">Nuevo</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Ordenes de Compra" nzIcon="user">
+        <ul>
+          <li nz-menu-item>Listar</li>
+          <li nz-menu-item>Nuevo</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <span
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></span>
+    </nz-header>
+    <nz-content>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>User</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <!--app-footer></app-footer-->
+    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
+
+<!--app-footer></app-footer-->
